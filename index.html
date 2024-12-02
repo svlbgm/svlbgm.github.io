@@ -80,10 +80,10 @@
     <h2>About Me</h2>
 <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
     <!-- Left Image -->
-    <div style="flex: 0 0 auto; text-align: center;">
+     <div style="flex: 0 0 auto; text-align: center; position: relative;">
         <img src="my_photo.JPG" 
              alt="My Picture"  
-             style="width: 200px; height: 200px; border-radius: 50%;">
+             style="max-width: 200px; height: auto; border-radius: 50%; display: block; margin: 0 auto;">
         <p style="margin-top: 10px; font-size: 1em; color: #666;">(Sevil Begum Gurcan the 1st)</p>
     </div>
     <!-- Right Text -->
@@ -95,7 +95,9 @@
                  alt="" 
                  style="width:30px; vertical-align:middle;"><br>
             Hoping to make a meaningful change in the world someday. For now, feel free to explore my journey and projects.<br>
-            <span style="display: inline-block; font-size: 1.2em; color: gray;">&lt;----------- This is me!</span>
+            <span style="position: absolute; right: -120%; top: 50%; transform: translateY(-50%); font-size: 1.5em; color: gray;">
+                &lt;----------- This is me!
+            </span>
         </p>
     </div>
 </div>

@@ -6,39 +6,44 @@
     <title>Sevil Begüm Gürcan - hello there! </title>
     <style>
         :root {
-            --background-color: white;
-            --text-color: #333;
-            --header-bg: linear-gradient(to right, #4caf50, #2196f3);
-            --nav-bg: #f4f4f4;
-            --section-bg: #e0f7fa;
-            --footer-bg: #333;
-            --footer-text: white;
-        }
+    --background-color: white;
+    --text-color: #333;
+    --header-bg: linear-gradient(to right, #4caf50, #2196f3);
+    --nav-bg: #f4f4f4;
+    --section-bg: #e0f7fa;
+    --footer-bg: #333;
+    --footer-text: white;
 
-        [data-theme="dark"] {
-            --background-color: #121212;
-            --text-color: #e0e0e0;
-            --header-bg: linear-gradient(to right, #212121, #424242);
-            --nav-bg: #333;
-            --section-bg: #1e1e1e;
-            --footer-bg: #212121;
-            --footer-text: #bbb;
-        }
-        body {
+    /* button variables */
+    --button-bg: #4caf50; /* Light theme button background */
+    --button-text: white; /* Light theme button text color */
+}
+
+[data-theme="dark"] {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --header-bg: linear-gradient(to right, #212121, #424242);
+    --nav-bg: #333;
+    --section-bg: #1e1e1e;
+    --footer-bg: #212121;
+    --footer-text: #bbb;
+
+    /* Dark theme button colors */
+    --button-bg: #666;
+    --button-text: #ddd;
+    }
+   body {
     font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: var(--background-color);
-        color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color); 
+    color: var(--text-color); 
     }
-
     header {
-        background: var(--header-bg);
+        background: var(--header-bg); 
         color: white;
-        padding: 20px;
-        text-align: center;
     }
-
+            
     nav {
         display: flex;
         justify-content: center;
@@ -70,9 +75,9 @@
     }
 
     .section {
-        padding: 40px;
-        text-align: center;
-        background: var(--section-bg);
+    padding: 40px;
+    text-align: center;
+    background: var(--section-bg);
     }
 
     .section h2 {
@@ -88,11 +93,20 @@
     }
 
     footer {
-        background: var(--footer-bg);
-        color: var(--footer-text);
-        text-align: center;
-        padding: 10px;
+    background: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 10px;
     }
+    button#themeToggle {
+    margin-left: 15px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--button-bg); /* Uses the variable */
+    color: var(--button-text); /* Uses the variable */
+    border-radius: 5px;
+}
 </style>
 </head>
 <body>
@@ -105,7 +119,7 @@
         <a href="#projects">Projects</a>
         <a href="#blog">Blog</a>
         <a href="#contact">Contact</a>
-        <button id="themeToggle" style="margin-left: 15px; padding: 5px 10px; border: none; cursor: pointer; background: #4caf50; color: white; border-radius: 5px;">
+        <button id="themeToggle" style="margin-left: 15px; padding: 5px 10px; border: none; cursor: pointer; background-color: var(--button-bg); color: var(--button-text); border-radius: 5px;">
             Night Mode
         </button>
     </nav>
@@ -122,7 +136,7 @@
         <img src="my_photo.JPG" 
              alt="My Picture"  
              style="max-width: 200px; height: auto; border-radius: 50%; display: block; margin: 0 auto;">
-        <p style="margin-top: 10px; font-size: 1.2em; color: #333;">(Sevil Begum Gurcan the 1st)</p>
+       <p style="margin-top: 10px; font-size: 1.2em; color: var(--text-color);">(Sevil Begüm Gürcan the 1st)</p>
     </div>
     <!-- Right Text -->
     <div style="flex: 1; min-width: 300px;">
@@ -152,14 +166,12 @@
         <p style="font-size: 2em; color: red;">Check again later!❤️ </p>
     </section>
     <section id="contact" class="section">
-        <h2>Contact</h2>
-        <p>You can contact me through my email: 
-         <a href="mailto:sevilbegum.gurcan@bahcesehir.edu.tr">sevilbegum.gurcan@bahcesehir.edu.tr</a>
-</p>
-       <section id="contact" class="section">
     <h2>Contact</h2>
+    <p>You can contact me through my email: 
+        <a href="mailto:sevilbegum.gurcan@bahcesehir.edu.tr">sevilbegum.gurcan@bahcesehir.edu.tr</a>
+    </p>
     <p>Also feel free to connect with me on LinkedIn!</p>
-    <a href="https://www.linkedin.com/in/sevil-beg%C3%BCm-g%C3%BCrcan-7a55bb233/" target="_blank" style="font-size: 1.2em; color: #0e76a8; text-decoration: none;">
+    <a href="https://www.linkedin.com/in/sevil-begüm-gürcan" target="_blank" style="font-size: 1.2em; color: #0e76a8; text-decoration: none;">
         Visit My LinkedIn Profile
     </a>
 </section>

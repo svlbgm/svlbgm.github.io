@@ -40,13 +40,18 @@
     color: var(--text-color); 
     }
     header {
-    background: var(--header-bg); /* Dynamic gradient */
-    color: white;
-    padding: 20px; /* Original padding */
-    text-align: center; /* Centers content */
-    min-height: 100px; /* Ensures it doesn't shrink too much */
+            background: var(--header-bg); /* Dynamic gradient */
+            color: white; /* Text color */
+            padding: 40px 20px; /* Increased vertical space */
+            text-align: center; /* Centers content horizontally */
+            min-height: 200px; /* Ensures header doesn't shrink */
+            display: flex; /* Enables centering */
+            flex-direction: column; /* Vertical alignment */
+            justify-content: center; /* Centers content vertically */
+            align-items: center; /* Centers content horizontally */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            border-bottom: 3px solid var(--footer-bg); /* Optional bottom border */
     }
-           
     nav {
         display: flex;
         justify-content: center;

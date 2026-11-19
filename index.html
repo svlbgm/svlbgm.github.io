@@ -1,209 +1,1244 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sevil Begüm Gürcan - hello there! </title>
-    <style>
-        :root {
-    --background-color: white;
-    --text-color: #333;
-    --header-bg: linear-gradient(to right, #4caf50, #2196f3);
-    --nav-bg: #f4f4f4;
-    --section-bg: #e0f7fa;
-    --footer-bg: #333;
-    --footer-text: white;
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Sevil Gurcan — AI and Industrial Engineering student building thoughtful software and exploring reliable AI.">
+<meta name="theme-color" content="#f5f4ee">
+<title>Sevil Gurcan — AI & Software</title>
 
-    /* button variables */
-    --button-bg: #4caf50; /* Light theme button background */
-    --button-text: white; /* Light theme button text color */
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --paper: #f5f4ee;
+  --ink: #20251f;
+  --muted: #666b62;
+  --line: #d8dacf;
+  --green: #426848;
+  --lime: #d6ed98;
+  --card: #e8ebdf;
+  --white: #fffef8;
 }
 
-[data-theme="dark"] {
-    --background-color: #121212;
-    --text-color: #e0e0e0;
-    --header-bg: linear-gradient(to right, #212121, #424242);
-    --nav-bg: #333;
-    --section-bg: #1e1e1e;
-    --footer-bg: #212121;
-    --footer-text: #bbb;
+* { box-sizing: border-box; }
 
-    /* Dark theme button colors */
-    --button-bg: #666;
-    --button-text: #ddd;
-    }
-   body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--background-color); 
-    color: var(--text-color); 
-    }
-    header {
-            background: var(--header-bg); /* Dynamic gradient */
-            color: white; /* Text color */
-            padding: 40px 20px; /* Increased vertical space */
-            text-align: center; /* Centers content horizontally */
-            min-height: 200px; /* Ensures header doesn't shrink */
-            display: flex; /* Enables centering */
-            flex-direction: column; /* Vertical alignment */
-            justify-content: center; /* Centers content vertically */
-            align-items: center; /* Centers content horizontally */
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-            border-bottom: 3px solid var(--footer-bg); /* Optional bottom border */
-    }
-    nav {
-        display: flex;
-        justify-content: center;
-        background: var(--nav-bg);
-        padding: 10px;
-    }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
 
-    nav a {
-        margin: 0 15px;
-        text-decoration: none;
-        color: var(--text-color);
-    }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.6;
+}
 
-    .hero {
-        text-align: center;
-        padding: 50px;
-        background: var(--section-bg);
-    }
+h1, h2, h3, .logo, .mono {
+  font-family: 'Space Grotesk', sans-serif;
+}
 
-    .hero h1 {
-        margin: 0;
-        font-size: 3em;
-        color: var(--text-color);
-    }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+button, a { -webkit-tap-highlight-color: transparent; }
 
-    .hero p {
-        font-size: 1.2em;
-        color: var(--text-color);
-    }
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 5px;
+}
 
-    .section {
-    padding: 40px;
-    text-align: center;
-    background: var(--section-bg);
-    }
+.wrap {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 6%;
+}
 
-    .section h2 {
-        margin-bottom: 20px;
-        color: var(--text-color);
-    }
+.skip {
+  position: absolute;
+  left: 20px;
+  top: -100px;
+  background: var(--lime);
+  padding: 12px;
+  z-index: 5;
+}
 
-    .projects img {
-        width: 100%;
-        max-width: 300px;
-        margin: 10px;
-        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-    }
+.skip:focus { top: 10px; }
 
-    footer {
-    background: var(--footer-bg);
-    color: var(--footer-text);
-    text-align: center;
-    padding: 10px;
-    }
-    button#themeToggle {
-    margin-left: 15px;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-    background-color: var(--button-bg); /* Uses the variable */
-    color: var(--button-text); /* Uses the variable */
-    border-radius: 5px;
+header {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
+nav {
+  height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.logo span { color: var(--green); }
+
+.navlinks {
+  display: flex;
+  gap: 30px;
+  font-size: 13px;
+  align-items: center;
+}
+
+.navlinks a:hover { color: var(--green); }
+
+.navlinks .contactlink {
+  border-bottom: 1px solid;
+  padding-bottom: 4px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.hero {
+  padding-top: 72px;
+  padding-bottom: 66px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 6%;
+  align-items: center;
+}
+
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 11px;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 7px 13px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background: var(--green);
+  border-radius: 50%;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: clamp(52px, 6.8vw, 90px);
+  line-height: 1.04;
+  letter-spacing: -5px;
+  margin: 28px 0;
+}
+
+h1 em {
+  font-family: Georgia, serif;
+  color: var(--green);
+  font-weight: 400;
+}
+
+p { margin: 0 0 20px; }
+
+.intro {
+  max-width: 480px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.actions {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin-top: 30px;
+  font-size: 13px;
+}
+
+.btn {
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--white);
+  padding: 13px 22px;
+  display: inline-flex;
+  gap: 28px;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.btn:hover { background: var(--green); }
+
+.textlink {
+  border-bottom: 1px solid var(--line);
+  padding: 8px 0;
+}
+
+.portrait {
+  position: relative;
+  padding: 20px 14px 0 0;
+}
+
+.portrait img {
+  width: 100%;
+  height: 445px;
+  object-fit: cover;
+  object-position: 70% 70%;
+  border-radius: 160px 160px 8px 8px;
+  background: var(--card);
+  filter: saturate(.9);
+}
+
+.portrait:before {
+  content: '';
+  position: absolute;
+  inset: 0 0 25px 25px;
+  border: 1px solid #9aa68c;
+  border-radius: 170px 170px 8px 8px;
+  z-index: -1;
+}
+
+.portraitnote {
+  position: absolute;
+  bottom: 28px;
+  left: -26px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 15px 20px;
+  transform: rotate(-4deg);
+  font-size: 12px;
+  box-shadow: 0 7px 20px #20251f0a;
+}
+
+.spark {
+  position: absolute;
+  right: -15px;
+  top: 5px;
+  color: var(--green);
+  font-size: 64px;
+}
+
+.strip {
+  border-block: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  padding: 22px 0;
+  gap: 18px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.strip b { color: var(--ink); font-weight: 500; }
+.section { padding: 90px 0; }
+
+.sectionhead {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 500;
+  letter-spacing: -2px;
+  line-height: 1.15;
+  margin: 12px 0 0;
+}
+
+.sectionhead p {
+  font-size: 13px;
+  color: var(--muted);
+  max-width: 300px;
+  margin: 0;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.filter {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 25px;
+  padding: 7px 17px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.filter[aria-pressed=true] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--white);
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 34px 26px;
+}
+
+.project[hidden] { display: none; }
+
+.art {
+  height: 260px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 7px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.art1 { background: #e2e6d8; }
+.art2 { background: #e9e1f0; }
+.art3 { background: #e5e6e8; }
+.art4 { background: #e8e2d5; }
+
+.window {
+  width: 86%;
+  background: #fafbf7;
+  border-radius: 7px;
+  box-shadow: 0 14px 32px #26382517;
+  transform: rotate(-5deg);
+  padding: 17px;
+}
+
+.windowbar {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid #e7e8e0;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.windowbar i {
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background: #b6bfb0;
+}
+
+.window h4 {
+  margin: 8px 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 21px;
+}
+
+.minirows {
+  display: flex;
+  gap: 9px;
+  margin-top: 15px;
+}
+
+.minirows div {
+  flex: 1;
+  height: 65px;
+  background: #e6ebdc;
+  border-radius: 3px;
+  padding: 9px;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.minirows div:nth-child(2) { background: #ece4d3; }
+.minirows div:nth-child(3) { background: #e0e6ed; }
+
+.tag {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  font-size: 9px;
+  background: #ffffffa8;
+  padding: 5px 9px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.matrix {
+  display: grid;
+  grid-template-columns: repeat(5, 25px);
+  gap: 7px;
+  transform: rotate(-8deg);
+}
+
+.matrix i {
+  width: 25px;
+  height: 25px;
+  border-radius: 3px;
+  background: #9273aa;
+  opacity: .25;
+}
+
+.matrix i:nth-child(3n) { opacity: .7; }
+
+.matrix i:nth-child(4n) {
+  opacity: 1;
+  background: #555a87;
+}
+
+.artlabel {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  line-height: 1.2;
+  margin-left: 25px;
+  max-width: 150px;
+}
+
+.imagegrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 78%;
+  transform: rotate(4deg);
+}
+
+.imagegrid div {
+  height: 82px;
+  background: repeating-radial-gradient(
+    ellipse at 30% 20%,
+    #758476 0 5px,
+    #b9c2b2 6px 12px,
+    #e0e6d9 13px 17px
+  );
+  border: 5px solid white;
+  border-radius: 3px;
+}
+
+.imagegrid div:nth-child(2) { filter: grayscale(1); }
+.imagegrid div:nth-child(3) { filter: contrast(2); }
+.imagegrid div:nth-child(4) { filter: sepia(1); }
+
+.rag {
+  width: 85%;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+}
+
+.query {
+  background: #faf8f0;
+  border: 1px solid #cec9ba;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.evidence {
+  border-left: 2px solid var(--green);
+  padding: 5px 15px;
+  color: #5d6656;
+}
+
+.projecttitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+  gap: 12px;
+}
+
+.project h3 {
+  font-size: 21px;
+  letter-spacing: -.6px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.project p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 9px 0 10px;
+  max-width: 440px;
+}
+
+.meta {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.projectbutton {
+  border: 1px solid var(--line);
+  background: transparent;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.projectbutton:hover { background: var(--lime); }
+
+.research {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 8px;
+  padding: 45px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-top: 55px;
+}
+
+.research .eyebrow { color: var(--lime); }
+
+.research h3 {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 16px 0;
+}
+
+.research p { color: #c3c9be; font-size: 13px; }
+
+.research details {
+  border-top: 1px solid #4a5046;
+  padding: 16px 0;
+}
+
+.research summary {
+  cursor: pointer;
+  font-size: 13px;
+  list-style-position: outside;
+}
+
+.research details p { margin: 15px 0 0; font-size: 12px; }
+
+.about {
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 10%;
+}
+
+.aboutcopy > p { font-size: 17px; color: var(--muted); }
+.aboutcopy strong { color: var(--ink); font-weight: 500; }
+
+.chips {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin: 22px 0;
+}
+
+.chips span {
+  font-size: 11px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 5px 10px;
+}
+
+.personal {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 18px !important;
+  margin-top: 24px;
+}
+
+.timeline { margin-top: 30px; }
+
+.role {
+  display: grid;
+  grid-template-columns: 125px 1fr;
+  gap: 20px;
+  padding: 23px 0;
+  border-top: 1px solid var(--line);
+}
+
+.role time { font-size: 11px; color: var(--muted); }
+.role h3 { font-size: 16px; margin: 0; font-weight: 500; }
+.role p { font-size: 12px; margin: 5px 0; color: var(--muted); }
+
+.contact {
+  border-top: 1px solid var(--line);
+  padding: 70px 0;
+}
+
+.contact h2 {
+  font-size: clamp(42px, 6vw, 76px);
+  max-width: 800px;
+  letter-spacing: -3px;
+}
+
+.contactrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 35px;
+  gap: 25px;
+}
+
+.socials { display: flex; gap: 22px; font-size: 12px; }
+
+.footer {
+  padding: 22px 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+dialog {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+  color: var(--ink);
+  max-width: 650px;
+  width: 90%;
+  padding: 40px;
+}
+
+dialog::backdrop {
+  background: #15201599;
+  backdrop-filter: blur(5px);
+}
+
+dialog h2 { font-size: 32px; margin-bottom: 20px; }
+dialog p { color: var(--muted); font-size: 14px; }
+
+.close {
+  float: right;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  background: none;
+}
+
+.dialogmeta {
+  color: var(--green);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.caption {
+  font-size: 9px;
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  color: #676d60;
+}
+
+.line {
+  display: block;
+  width: 50px;
+  height: 1px;
+  background: var(--green);
+  margin-top: 30px;
+}
+
+@media (min-width: 1450px) {
+  .hero { padding-top: 100px; }
+}
+
+@media (max-width: 750px) {
+  .wrap { padding: 0 6%; }
+  .navlinks { gap: 16px; font-size: 11px; }
+  .navlinks .contactlink { display: none; }
+  nav { height: 68px; }
+
+  .hero {
+    padding-top: 42px;
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  h1 { letter-spacing: -3px; max-width: 550px; }
+  .portrait { max-width: 360px; margin: 0 auto; width: 85%; }
+  .portrait img { height: 350px; }
+  .strip { flex-wrap: wrap; font-size: 10px; }
+  .section { padding: 60px 0; }
+
+  .sectionhead {
+    align-items: start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .projects { grid-template-columns: 1fr; }
+  .art { height: 250px; }
+  .research { grid-template-columns: 1fr; padding: 28px; gap: 20px; }
+  .about { grid-template-columns: 1fr; gap: 30px; }
+  .contactrow { align-items: start; flex-direction: column; }
+  .role { grid-template-columns: 95px 1fr; gap: 10px; }
+  .footer { gap: 15px; }
+  .logo { font-size: 20px; }
+  dialog { padding: 25px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
 </style>
 </head>
-<body>
-    <header>
-        <h1>Sevil Begüm Gürcan</h1>
-        <p>Exploring the intersections of ai & tech & design & management </p>
-    </header>
-    <nav>
-        <a href="#about">About Me</a>
-        <a href="#projects">Projects</a>
-        <a href="#blog">Blog</a>
-        <a href="#contact">Contact</a>
-        <button id="themeToggle" style="margin-left: 15px; padding: 5px 10px; border: none; cursor: pointer; background-color: var(--button-bg); color: var(--button-text); border-radius: 5px;">
-            Night Mode
-        </button>
-    </nav>
-    <section class="hero">
-        <h1>Welcome to My Personal Website &#x1F49C;</h1>
-        <p>You are at the right place!</p>
-        <a href="#about" style="color: #2196f3; text-decoration: underline;">Learn More About Me</a>
-    </section>
-    <section id="about" class="section">
-    <h2>About Me</h2>
-<div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
-    <!-- Left Image -->
-     <div style="padding: 15px; background: #f9f5e6; border: 5px solid #d4af37; border-radius: 20px; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); text-align: center;">
-        <img src="my_photo.JPG" 
-             alt="My Picture"  
-             style="max-width: 200px; height: auto; border-radius: 50%; display: block; margin: 0 auto;">
-       <p style="margin-top: 10px; font-size: 1.2em; color: var(--text-color);">(Sevil Begüm Gürcan the 1st)</p>
-    </div>
-    <!-- Right Text -->
-    <div style="flex: 1; min-width: 300px;">
-        <p style="line-height: 1.6;">
-            &#x1F496; I am a double major in AI & Industrial Engineering also passionate about design, innovation, and creativity.<br>
-            I also love playing story-based games and well... The Sims Franchise!
-            <img src="plumbob_emoji_transparent.png" 
-                 alt="" 
-                 style="width:30px; vertical-align:middle;"><br>
-            &#x1F680;Hoping to make a meaningful impact in the world someday. For now, feel free to explore my journey and projects.<br>
-            </p>
-           <!-- This is me text with arrow -->
-        <div style="margin-top: 10px; text-align: left;">
-        <span style="font-size: 1.5em; color: gray;">&lt;-----------  This is me!</span>
-   </div>
- </div>
-</div>
-    </section>
-    <section id="projects" class="section projects">
-        <h2>Projects</h2>
-        <p> &#x1F916;Featured Project: Working on stuff currently, please come back later!</p>
-        <img src="placeholder-image.jpg" alt="Incoming!">
-    </section>
-    <section id="blog" class="section">
-        <h2>Blog</h2>
-        <p>Read my insights on AI, industrial engineering, and EVERYTHING in general &#x1F431;</p>
-        <p style="font-size: 2em; color: red;">Check again later!❤️ </p>
-    </section>
-    <section id="contact" class="section">
-    <h2>Contact</h2>
-    <p>You can contact me through my email: 
-        <a href="mailto:sevilbegum.gurcan@bahcesehir.edu.tr">sevilbegum.gurcan@bahcesehir.edu.tr</a>
-    </p>
-    <p>Also feel free to connect with me on LinkedIn!</p>
-    <a href="https://www.linkedin.com/in/sevil-beg%C3%BCm-g%C3%BCrcan-7a55bb233/" target="_blank" style="font-size: 1.2em; color: #0e76a8; text-decoration: none;">
-        Visit My LinkedIn Profile
-    </a>
-    <br>
-    <a href="https://github.com/svlbgm" target="_blank" style="font-size: 1.2em; color: black; text-decoration: none;">
-        Visit My GitHub Profile
-    </a>
-    </section>
-    <footer>
-        <p>&copy; 2025 Sevil Begüm Gürcan. All Rights Reserved.</p>
-    </footer>
-    <script>
-    const themeToggle = document.getElementById('themeToggle');
-    const body = document.body;
 
-    themeToggle.addEventListener('click', () => {
-        // Toggle the "data-theme" attribute
-        if (body.getAttribute('data-theme') === 'dark') {
-            body.removeAttribute('data-theme');
-            themeToggle.textContent = 'Night Mode';
-        } else {
-            body.setAttribute('data-theme', 'dark');
-            themeToggle.textContent = 'Day Mode';
-        }
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <nav class="wrap">
+    <a class="logo" href="#">Sevil<span>✳</span></a>
+
+    <div class="navlinks">
+      <a href="#about">A little about me</a>
+      <a href="#work">Selected work</a>
+      <a class="contactlink" href="#contact">Let's talk ↗</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main" class="wrap">
+
+  <section class="hero">
+    <div>
+      <div class="availability">
+        <span class="dot"></span>
+        Exploring 2027 opportunities
+      </div>
+
+      <h1>Building software.<br>Exploring <em>AI.</em></h1>
+
+      <p class="intro">
+        I like making complicated things work, making them easier to use,
+        and working with people who bring something different to the table.
+        A fresh perspective. A good question. A sense of humour.
+      </p>
+
+      <div class="actions">
+        <a class="btn" href="#about">
+          Meet the person behind it <span>↘</span>
+        </a>
+        <a class="textlink" href="#work">Explore my work ↗</a>
+      </div>
+    </div>
+
+    <div class="portrait">
+      <img
+        src="sevil-paris.jpeg"
+        alt="Sevil Gurcan"
+        fetchpriority="high"
+      >
+      <span class="spark" aria-hidden="true">✳</span>
+      <div class="portraitnote">
+        Based in Istanbul.<br>
+        Exchange semester at ISEP Paris.
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <span><b>BAHÇEŞEHİR UNIVERSITY</b> · Double major</span>
+    <span>AI ENGINEERING × INDUSTRIAL ENGINEERING</span>
+    <span><b>ISEP PARIS</b> · Exchange, 2026</span>
+  </div>
+
+  <section id="about" class="section about">
+    <div>
+      <span class="eyebrow">01 / The person behind the projects</span>
+      <h2>Engineering with<br>a wider lens.</h2>
+      <span class="line"></span>
+
+      <div class="timeline">
+        <div class="role">
+          <time>2026 — present</time>
+          <div>
+            <h3>Doğuş Hospitality & Retail</h3>
+            <p>
+              Digital Marketing Intern<br>
+              AI feedback, analytics, and operational data.
+            </p>
+          </div>
+        </div>
+
+        <div class="role">
+          <time>Jun–Aug 2026</time>
+          <div>
+            <h3>Microsoft</h3>
+            <p>
+              AI Innovators Internship Program<br>
+              Built GlobalMobility EDU, a fully local Python RAG assistant
+              with source-cited guidance, using Foundry Local, Phi-4 Mini,
+              and Qwen3 embeddings.
+            </p>
+          </div>
+        </div>
+
+        <div class="role">
+          <time>2025</time>
+          <div>
+            <h3>Arzum</h3>
+            <p>
+              IT & Digital Transformation Intern<br>
+              RPA, SAP processes, and cross-team coordination.
+            </p>
+          </div>
+        </div>
+
+        <div class="role">
+          <time>Spring 2026</time>
+          <div>
+            <h3>ISEP Paris</h3>
+            <p>
+              Engineering exchange<br>
+              International teamwork and software development.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="aboutcopy">
+      <p>
+        I’m <strong>Sevil Gurcan</strong>. I study
+        <strong>Artificial Intelligence Engineering and Industrial Engineering</strong>
+        at Bahçeşehir University, with expected graduation in May 2027.
+      </p>
+
+      <p>
+        One major helps me build models. The other makes me ask how they fit
+        into a larger system: its decisions, constraints, and people.
+      </p>
+
+      <p>
+        That curiosity takes me from computer vision and full-stack development
+        to optimization, causal inference, and AI evaluation. I like building
+        something, testing its assumptions, and understanding where it breaks.
+      </p>
+
+      <div class="chips">
+        <span>Python</span>
+        <span>C / C++</span>
+        <span>TypeScript</span>
+        <span>React & NestJS</span>
+        <span>PostgreSQL</span>
+        <span>TensorFlow</span>
+        <span>OpenCV</span>
+        <span>Optimization</span>
+      </div>
+
+      <p class="personal">
+        Outside the code? Reading books, long chats with friends,
+        watching series, and wandering around.
+      </p>
+    </div>
+  </section>
+
+  <section id="work" class="section">
+    <div class="sectionhead">
+      <div>
+        <span class="eyebrow">02 / Selected work</span>
+        <h2>Ideas, turned into things.</h2>
+      </div>
+      <p>
+        A selection of software, vision, and AI projects —
+        and the questions behind them.
+      </p>
+    </div>
+
+    <div class="filters" role="group" aria-label="Filter projects">
+      <button class="filter" aria-pressed="true" data-filter="all">
+        All work
+      </button>
+      <button class="filter" aria-pressed="false" data-filter="software">
+        Software
+      </button>
+      <button class="filter" aria-pressed="false" data-filter="ai">
+        AI & ML
+      </button>
+      <button class="filter" aria-pressed="false" data-filter="vision">
+        Computer vision
+      </button>
+    </div>
+
+    <div class="projects">
+
+      <article class="project" data-category="software">
+        <div class="art art1">
+          <span class="tag">Team project / ISEP</span>
+          <div class="window">
+            <div class="windowbar"><i></i><i></i><i></i></div>
+            <span class="meta">Discover. Connect. Experience.</span>
+            <h4>eventoria<span style="color:#71925f">.</span></h4>
+            <div class="minirows">
+              <div>EXPLORE<br>Events near you</div>
+              <div>CONNECT<br>Conversations</div>
+              <div>ORGANIZE<br>Your next event</div>
+            </div>
+          </div>
+          <span class="caption">
+            Concept illustration · not a product screenshot
+          </span>
+        </div>
+
+        <div class="projecttitle">
+          <h3>Bringing people together.</h3>
+          <button
+            class="projectbutton"
+            data-project="eventoria"
+            aria-label="Read about Eventoria"
+          >↗</button>
+        </div>
+
+        <p>
+          Eventoria — a full-stack event platform with authentication,
+          organizer workflows, and real-time chat.
+        </p>
+        <span class="meta">React · TypeScript · NestJS · PostgreSQL</span>
+      </article>
+
+      <article class="project" data-category="ai vision">
+        <div class="art art2">
+          <span class="tag">Multimodal machine learning</span>
+          <div class="matrix" aria-hidden="true"></div>
+          <div class="artlabel">Seeing more.<br>Reading more.</div>
+          <span class="caption">Visual + text → fashion classification</span>
+        </div>
+
+        <div class="projecttitle">
+          <h3>Two signals. One prediction.</h3>
+          <button
+            class="projectbutton"
+            data-project="fashion"
+            aria-label="Read about multimodal fashion classification"
+          >↗</button>
+        </div>
+
+        <p>
+          Combining image and text features — then questioning what
+          unusually high accuracy actually tells us.
+        </p>
+        <span class="meta">EfficientNetB0 · GRU · TensorFlow</span>
+      </article>
+
+      <article class="project" data-category="vision software">
+        <div class="art art3">
+          <span class="tag">Real-time image processing</span>
+          <div class="imagegrid" aria-hidden="true">
+            <div></div><div></div><div></div><div></div>
+          </div>
+          <span class="caption">Illustrative transformations</span>
+        </div>
+
+        <div class="projecttitle">
+          <h3>A different way to see.</h3>
+          <button
+            class="projectbutton"
+            data-project="editor"
+            aria-label="Read about MyEditor"
+          >↗</button>
+        </div>
+
+        <p>
+          MyEditor — a C++ image processing project exploring
+          13 real-time operations with OpenCV.
+        </p>
+        <span class="meta">C++17 · OpenCV · CMake</span>
+      </article>
+
+      <article class="project" data-category="ai software">
+        <div class="art art4">
+          <span class="tag">Microsoft AI Innovators project</span>
+          <div class="rag">
+            <div class="query">What evidence supports this answer?</div>
+            <div class="evidence">
+              Retrieve relevant context.<br>
+              Check what it can support.<br>
+              Know when to ask for more.
+            </div>
+          </div>
+          <span class="caption">The question guiding my approach to RAG</span>
+        </div>
+
+        <div class="projecttitle">
+          <h3>Answers need a foundation.</h3>
+          <button
+            class="projectbutton"
+            data-project="rag"
+            aria-label="Read about GlobalMobility EDU"
+          >↗</button>
+        </div>
+
+        <p>
+          GlobalMobility EDU — a RAG assistant project that sparked a deeper
+          interest in evidence and uncertainty.
+        </p>
+        <span class="meta">RAG · Foundry Local · English / Turkish UI</span>
+      </article>
+
+    </div>
+
+    <div class="research">
+      <div>
+        <span class="eyebrow">Currently thinking about</span>
+        <h3>When should an AI system<br>say “I’m not sure”?</h3>
+        <p>
+          I’m interested in the gap between a model that gives an answer
+          and one whose answer we can trust.
+        </p>
+        <span class="meta" style="color:#b7c49f">
+          Ongoing research & coursework
+        </span>
+      </div>
+
+      <div>
+        <details>
+          <summary>How fragile are LLM evaluations?</summary>
+          <p>
+            In a team research project on Turkish LLM robustness, we explore
+            how answer order, prompt format, and instruction language can
+            change model rankings. The question: are we measuring capability,
+            or sensitivity to the test?
+          </p>
+        </details>
+
+        <details>
+          <summary>Prediction is not the same as causation.</summary>
+          <p>
+            My causal inference coursework uses the METABRIC breast cancer
+            dataset to study treatment effects through propensity scores,
+            weighting, and survival analysis. This is an academic analysis,
+            not clinical guidance.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can emotion classifiers recognize uncertainty?</summary>
+          <p>
+            For a team text mining project using GoEmotions, we are considering
+            how to evaluate when a classifier should abstain, alongside standard
+            classification performance.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <span class="eyebrow">03 / What's next?</span>
+    <h2>
+      Good things start<br>
+      with a conversation<span style="color:var(--green)">.</span>
+    </h2>
+
+    <div class="contactrow">
+      <div>
+        <p style="color:var(--muted);font-size:14px">
+          Interested in software, AI, and research opportunities for 2027.
+        </p>
+        <a class="btn" href="mailto:sevilbegum.gurcan@bahcesehir.edu.tr">
+          Say hello <span>↗</span>
+        </a>
+      </div>
+
+      <div class="socials">
+        <a
+          class="textlink"
+          href="https://github.com/svlbgm"
+          target="_blank"
+          rel="noopener noreferrer"
+        >GitHub ↗</a>
+
+        <a
+          class="textlink"
+          href="https://www.linkedin.com/in/sevil-beg%C3%BCm-g%C3%BCrcan-7a55bb233/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >LinkedIn ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span>© 2026 Sevil Gurcan</span>
+    <span>
+      Made with intention. Always in progress.
+      <span aria-hidden="true">✳</span>
+    </span>
+  </footer>
+</main>
+
+<dialog id="projectdialog" aria-labelledby="dialogtitle">
+  <button class="close" aria-label="Close project details">×</button>
+  <span class="dialogmeta" id="dialogmeta"></span>
+  <h2 id="dialogtitle"></h2>
+  <div id="dialogbody"></div>
+</dialog>
+
+<script>
+const projects = {
+  eventoria: {
+    title: 'Eventoria',
+    meta: 'Full-stack · Team of five · ISEP Paris',
+    body: `
+      <p>
+        An event management platform built with an international engineering
+        team. The project connects a React and TypeScript frontend to a NestJS
+        API and PostgreSQL database.
+      </p>
+      <p>
+        <strong>Engineering focus</strong><br>
+        JWT and Google authentication, role-based access, and real-time
+        conversations with Socket.IO. Working across these layers made
+        integration and communication as important as individual features.
+      </p>
+      <p>
+        <strong>What I took away</strong><br>
+        Real-time functionality depends on shared assumptions about
+        authentication, rooms, and connection state — not just a working
+        chat interface.
+      </p>
+      <a
+        class="textlink"
+        href="https://eventoria.juniorisep.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Visit project website ↗</a>
+    `
+  },
+
+  fashion: {
+    title: 'Multimodal fashion classification',
+    meta: 'Machine learning · Image & text fusion',
+    body: `
+      <p>
+        A TensorFlow/Keras project combining EfficientNetB0 visual features
+        with a GRU text branch for fashion classification.
+      </p>
+      <p>
+        <strong>The interesting part</strong><br>
+        Unusually high accuracy on a relatively simple dataset raised a more
+        useful question than “can we improve the score?”: what exactly does
+        this evaluation demonstrate?
+      </p>
+      <p>
+        <strong>What I took away</strong><br>
+        A strong result should lead to closer inspection of dataset difficulty,
+        split design, and potential shortcuts before making claims about
+        generalization.
+      </p>
+    `
+  },
+
+  editor: {
+    title: 'MyEditor',
+    meta: 'Computer vision · C++17 / OpenCV / CMake',
+    body: `
+      <p>
+        A C++ image processing project implementing 13 real-time operations
+        with OpenCV.
+      </p>
+      <p>
+        <strong>Engineering focus</strong><br>
+        Connecting visual transformations to an interactive processing loop,
+        while working with a native C++ build environment.
+      </p>
+      <p>
+        <strong>What I took away</strong><br>
+        Implementing image operations directly helped me connect mathematical
+        transformations to what actually changes in an image.
+      </p>
+    `
+  },
+
+  rag: {
+    title: 'GlobalMobility EDU',
+    meta: 'Microsoft AI Innovators · RAG assistant',
+    body: `
+      <p>
+        A retrieval-augmented assistant project using Foundry Local,
+        with English and Turkish interfaces.
+      </p>
+      <p>
+        <strong>The question it opened up</strong><br>
+        Retrieving text similar to a question does not automatically make
+        that text sufficient evidence for an answer. I became particularly
+        interested in how assistants should respond when context is incomplete.
+      </p>
+      <p>
+        <strong>What I took away</strong><br>
+        Reliability requires thinking about the evidence behind an answer,
+        as well as the fluency of the answer itself.
+      </p>
+    `
+  }
+};
+
+document.querySelectorAll('.matrix').forEach(element => {
+  for (let i = 0; i < 25; i++) {
+    element.appendChild(document.createElement('i'));
+  }
+});
+
+document.querySelectorAll('.filter').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('.filter').forEach(item => {
+      item.setAttribute('aria-pressed', String(item === button));
     });
+
+    document.querySelectorAll('.project').forEach(project => {
+      project.hidden =
+        button.dataset.filter !== 'all' &&
+        !project.dataset.category.split(' ').includes(button.dataset.filter);
+    });
+  });
+});
+
+const dialog = document.getElementById('projectdialog');
+
+document.querySelectorAll('[data-project]').forEach(button => {
+  button.addEventListener('click', () => {
+    const project = projects[button.dataset.project];
+
+    document.getElementById('dialogtitle').textContent = project.title;
+    document.getElementById('dialogmeta').textContent = project.meta;
+    document.getElementById('dialogbody').innerHTML = project.body;
+
+    dialog.showModal();
+  });
+});
+
+dialog.querySelector('.close').addEventListener('click', () => {
+  dialog.close();
+});
+
+dialog.addEventListener('click', event => {
+  if (event.target === dialog) {
+    const bounds = dialog.getBoundingClientRect();
+
+    if (
+      event.clientX < bounds.left ||
+      event.clientX > bounds.right ||
+      event.clientY < bounds.top ||
+      event.clientY > bounds.bottom
+    ) {
+      dialog.close();
+    }
+  }
+});
 </script>
 </body>
 </html>
